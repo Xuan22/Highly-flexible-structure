@@ -1,0 +1,14 @@
+gnuplot>
+set dgrid3d 7, 7
+set hidden3d
+splot "data1.dat" u 1:2:3 with lines
+plot "tip0y.dat" u 1:2 with lines
+
+
+// 1012 Trim
+gfortran -c types.f90 str_constants.f90 global_var.f90 ele_index.f90 dgefa.f dgesl.f array_inv.f90 matInv.f90 quad_int.f90 GaussQuad.f90 shapeFunction.f90 shapeFunctionM.f90 initCurv.f90 getStrain.f90 getTransformation.f90 getMassM.f90 dpmpar.f enorm.f fdjac1.f qform.f qrfac.f r1mpyq.f r1updt.f dogleg.f hybrd.f hybrd1.f modfcn.f90  getChangeInT.f90 getChangeInCurv.f90 Curvature.f90 getPsi.f90 getPhi.f90 getDerivatives.f90 changeInCurvK.f90 getZ.f90 getZm.f90 getR.f90 assembly.f90 applyBoundary.f90 addboundary.f90 Aero_Dyn.f90 Struct_Dyn.f90 Coupling.f90 Trim_Main.f90
+
+gfortran types.o str_constants.o global_var.o ele_index.o ddot.o idamax.o dscal.o daxpy.o dgefa.o dgesl.o array_inv.o matInv.o quad_int.o GaussQuad.o shapeFunction.o shapeFunctionM.o initCurv.o getStrain.o getTransformation.o getMassM.o dpmpar.o enorm.o fdjac1.o qform.o qrfac.o r1mpyq.o r1updt.o dogleg.o hybrd.o hybrd1.o modfcn.o getChangeInT.o getChangeInCurv.o Curvature.o getPsi.o getPhi.o getDerivatives.o changeInCurvK.o getZ.o getZm.o getR.o assembly.o applyBoundary.o addboundary.o Aero_Dyn.o Struct_Dyn.o Coupling.o Trim_Main.o -o Trim
+
+./Trim
+
